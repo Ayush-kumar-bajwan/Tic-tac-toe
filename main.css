@@ -1,0 +1,125 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --text: #edf2f4;
+    --bg: #ef233c;
+    --btn-bg:#edf6f9;
+   
+  
+}
+
+
+body {
+    color: var(--text);
+    background-color: var(--bg);
+    font-family: 'Nerko One', cursive;
+  }
+
+h1{
+    text-transform: uppercase;
+    font-size: 80px;
+    margin-bottom: 0;
+}
+.container{
+    height:100vh;
+    width:100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+#board{
+   
+    display:grid;
+    grid-template-columns: repeat(3,auto);
+    margin-top: 40px;
+    
+    
+
+}
+.box{
+    width:  16vw;
+    height: 16vh;
+    display:flex;
+    
+    justify-content: center;
+    align-items: center;
+    color: var(--text);
+    cursor: pointer;
+    font-size:40px;
+    
+    
+}
+#strategy{
+  padding: 20px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+#restart{
+    padding:10px 20px;
+    border:none;
+    border-radius: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family:"Nerko one",cursive;
+    background-color: var(--btn-bg);
+    color:var(--bg);
+    text-transform: uppercase;
+    cursor:pointer;
+}
+
+ .box:nth-child(3n+1) {
+  border-right: 3px solid white;
+}
+
+.box:nth-child(3n) {
+  border-left: 3px solid white;
+}
+
+.box:nth-child(-n+6) {
+  border-bottom: 3px solid white;
+} 
+.win{
+  animation: winAnimation ease-in-out 1s infinite;
+}
+footer p{
+  margin-top: 12px;
+  font-size:16px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@keyframes winAnimation {
+0%{background-color: #2c3a47;}
+100%{background-color: #130f40;}
+
+}
+
+/*media queries*/
+
+@media (max-width: 768px){
+  h1{
+    font-size:55px;
+  }
+
+
+.box{
+  width:24vw;
+  height:20vh;
+  font-size:32px;
+}
+
+#strategy{
+  font-size: 24px;
+}
+
+#restart{
+  font-size:18px;
+}
+
+}
